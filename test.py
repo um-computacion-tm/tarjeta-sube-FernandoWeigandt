@@ -82,5 +82,19 @@ class TestSube(unittest.TestCase):
         sube.pagar_pasaje()
         self.assertEqual(sube.saldo,0)
 
+    def test_pagar_pasaje_con_grupo_beneficiario_universitario(self):
+        sube = Sube()
+        sube.saldo = 49
+        sube.grupo_beneficiario = UNIVERSITARIO
+        sube.pagar_pasaje()
+        self.assertEqual(sube.saldo,0)
+
+    def test_pagar_pasaje_con_grupo_beneficiario_jubilado(self):
+        sube = Sube()
+        sube.saldo = 52.5
+        sube.grupo_beneficiario = JUBILADO
+        sube.pagar_pasaje()
+        self.assertEqual(sube.saldo,0)
+
 if __name__ == '__main__':
     unittest.main()
